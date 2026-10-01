@@ -380,4 +380,22 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     disableBrowserLinkPreview();
+
+    // ----------------------------------------------------
+    // 5. Skeleton UI per le immagini
+    // ----------------------------------------------------
+    document.querySelectorAll('.skeleton').forEach(box => {
+        const img = box.querySelector('img');
+        if (!img) return;
+
+        const fatto = () => box.classList.add('loaded');
+
+        if (img.complete && img.naturalWidth > 0) {
+            fatto();
+        } else {
+            img.addEventListener('load', fatto, { once: true });
+            img.addEventListener('error', fatto, { once: true });
+        }
+    });
 });
+

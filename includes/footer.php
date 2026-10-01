@@ -7,7 +7,7 @@
         <!-- LOGHI UFFICIALI: AVO, AVOPROGETTI, GUSTAVO -->
         <div class="footer-logos">
             <a href="https://www.itisavogadro.it" target="_blank" rel="noopener noreferrer" class="footer-logo-link" title="Istituto Tecnico Amedeo Avogadro — Torino">
-                <img src="assets/img/logo_avogadro.jpg" alt="Logo IIS Avogadro" class="footer-logo-avo">
+                <img src="assets/img/logo_avogadro.png" alt="Logo IIS Avogadro" class="footer-logo-avo">
             </a>
             
             <a href="https://avoprogetti.it" target="_blank" rel="noopener noreferrer" class="footer-logo-link" title="Piattaforma AvoProgetti">

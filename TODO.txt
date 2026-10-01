@@ -8,22 +8,22 @@ Migliorie sito Gustavo
 
 -Esempio del json del Gustavo
 
--Riprendere i colori del chatbot
+-Riprendere i colori del chatbot[COMPLETATO]
 
--Aggiungere responsive
+-Aggiungere responsive[COMPLETATO]
 
--Home da modificare: passa la voglia di leggere tutto quel testo
+-Home da modificare: passa la voglia di leggere tutto quel testo[COMPLETATO]
 
 
 Collaboratori:Cassara
 
 includo la navbar e footer con php, clsi da tenere la navbar in un solo file
-footer con logo avo, avoprogetti e gustavo
+footer con logo avo, avoprogetti e gustavo[COMPLETATO]
 
-aggiungere slogan e altri loghi di avo
+aggiungere slogan e altri loghi di avo[COMPLETATO]
 
+Suddivedere la galleria in sezioni, con descrizione
 
-GustAvo -- il chatbot che ti orienta a scuola(stile piu piccolo)
+GustAvo -- il chatbot che ti orienta a scuola(stile piu piccolo)[COMPLETATO]
 
- <h2>Un progetto nato in classe, cresciuto al CSI Piemonte</h2>
-            <h2>Un progetto nato in CSI Piemonte, cresciuto in classe</h2>
+    

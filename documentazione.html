@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="it">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,12 +13,13 @@
     <link rel="stylesheet" href="assets/css/style.css">
     <script src="assets/js/main.js" defer></script>
 </head>
+
 <body>
 
     <!-- NAVBAR UFFICIALE GUSTAVO -->
     <header>
         <nav class="navbar">
-             <a href="index.html" class="logo-link">
+            <a href="index.html" class="logo-link">
                 <img src="assets/img/gustavo_icon.png" alt="Logo GustAvo" class="nav-logo-icon">
                 <span class="logo-testo">
                     <span class="logo-nome">GustAvo</span>
@@ -53,7 +55,7 @@
     <!-- MAIN CONTENT -->
     <main class="page-wrapper">
         <div class="container">
-            
+
             <header class="page-header">
                 <h1 class="titolo-pagina">Documentazione Tecnica</h1>
                 <p class="sottotitolo">
@@ -65,13 +67,20 @@
             <section class="doc-section card-panel">
                 <h2>Architettura tecnica del sistema</h2>
                 <p>
-                    GustAvo adotta un'architettura client-server modulare a componenti disaccoppiati, progettata per essere eseguita in modo efficiente sull'infrastruttura scolastica:
+                    GustAvo adotta un'architettura client-server modulare a componenti disaccoppiati, progettata per
+                    essere eseguita in modo efficiente sull'infrastruttura scolastica:
                 </p>
                 <ul style="margin-left: 20px; line-height: 1.8; color: var(--text-body); margin-bottom: 16px;">
-                    <li><strong>Frontend Web (HTML5 / CSS3 / JavaScript):</strong> interfaccia conversazionale reattiva e accessibile, ottimizzata per desktop e dispositivi mobili.</li>
-                    <li><strong>Backend API (Python / Flask):</strong> server web leggero che espone l'endpoint <code>/chat</code> per ricevere ed elaborare le richieste POST in formato JSON, con abilitazione CORS per la sicurezza delle chiamate cross-origin.</li>
-                    <li><strong>Motore di Classificazione NLP (Scikit-Learn):</strong> pipeline di pre-elaborazione del testo che trasforma le frasi in vettori numerici (TF-IDF) e determina la similarità con gli intenti censiti.</li>
-                    <li><strong>Knowledge Base (intents.json):</strong> archivio strutturato contenente le categorie, i pattern di addestramento e le risposte ufficiali certificate dalla scuola.</li>
+                    <li><strong>Frontend Web (HTML5 / CSS3 / JavaScript):</strong> interfaccia conversazionale reattiva
+                        e accessibile, ottimizzata per desktop e dispositivi mobili.</li>
+                    <li><strong>Backend API (Python / Flask):</strong> server web leggero che espone l'endpoint
+                        <code>/chat</code> per ricevere ed elaborare le richieste POST in formato JSON, con abilitazione
+                        CORS per la sicurezza delle chiamate cross-origin.</li>
+                    <li><strong>Motore di Classificazione NLP (Scikit-Learn):</strong> pipeline di pre-elaborazione del
+                        testo che trasforma le frasi in vettori numerici (TF-IDF) e determina la similarità con gli
+                        intenti censiti.</li>
+                    <li><strong>Knowledge Base (intents.json):</strong> archivio strutturato contenente le categorie, i
+                        pattern di addestramento e le risposte ufficiali certificate dalla scuola.</li>
                 </ul>
             </section>
 
@@ -79,14 +88,24 @@
             <section class="doc-section card-panel">
                 <h2>Ciclo di vita della richiesta (Workflow)</h2>
                 <p>
-                    Il flusso operativo che trasforma una domanda dell'utente in una risposta certa segue cinque passaggi sequenziali:
+                    Il flusso operativo che trasforma una domanda dell'utente in una risposta certa segue cinque
+                    passaggi sequenziali:
                 </p>
                 <ol style="margin-left: 20px; line-height: 1.8; color: var(--text-body);">
-                    <li><strong>Input dell'utente:</strong> lo studente digita la propria domanda nel campo di testo dell'interfaccia.</li>
-                    <li><strong>Inoltro HTTP:</strong> il client web effettua una chiamata asincrona (fetch POST) inviando il payload <code>{ "message": "..." }</code> all'endpoint <code>/chat</code>.</li>
-                    <li><strong>Vettorizzazione e Classificazione:</strong> il server pre-elabora il messaggio, lo converte in vettore numerico tramite <code>TfidfVectorizer</code> e calcola la similarità coseno con ciascun pattern di addestramento.</li>
-                    <li><strong>Identificazione dell'intento:</strong> l'algoritmo seleziona il tag con il punteggio di confidenza più alto. Se il punteggio supera la soglia prefissata (threshold), l'intento viene validato; in caso contrario, scatta il fallback di sicurezza (<em>"Non ho capito bene la domanda"</em>).</li>
-                    <li><strong>Erogazione della risposta:</strong> il server estrae la risposta convalidata associata al tag individuato e la restituisce al client in formato JSON per la visualizzazione a schermo.</li>
+                    <li><strong>Input dell'utente:</strong> lo studente digita la propria domanda nel campo di testo
+                        dell'interfaccia.</li>
+                    <li><strong>Inoltro HTTP:</strong> il client web effettua una chiamata asincrona (fetch POST)
+                        inviando il payload <code>{ "message": "..." }</code> all'endpoint <code>/chat</code>.</li>
+                    <li><strong>Vettorizzazione e Classificazione:</strong> il server pre-elabora il messaggio, lo
+                        converte in vettore numerico tramite <code>TfidfVectorizer</code> e calcola la similarità coseno
+                        con ciascun pattern di addestramento.</li>
+                    <li><strong>Identificazione dell'intento:</strong> l'algoritmo seleziona il tag con il punteggio di
+                        confidenza più alto. Se il punteggio supera la soglia prefissata (threshold), l'intento viene
+                        validato; in caso contrario, scatta il fallback di sicurezza (<em>"Non ho capito bene la
+                            domanda"</em>).</li>
+                    <li><strong>Erogazione della risposta:</strong> il server estrae la risposta convalidata associata
+                        al tag individuato e la restituisce al client in formato JSON per la visualizzazione a schermo.
+                    </li>
                 </ol>
             </section>
 
@@ -96,16 +115,24 @@
                 <p>
                     I componenti software del repository del bot corrispondono alla struttura ufficiale documentata:
                 </p>
-                <div style="background: #f8fafc; border: 1px solid var(--border-subtle); border-radius: var(--radius-sm); padding: 18px 20px; margin: 16px 0;">
+                <div
+                    style="background: #f8fafc; border: 1px solid var(--border-subtle); border-radius: var(--radius-sm); padding: 18px 20px; margin: 16px 0;">
                     <ul style="margin: 0; padding-left: 18px; line-height: 1.8; color: var(--text-body);">
-                        <li><code>app.py</code>: entrypoint del server Flask, gestione del routing API <code>/chat</code> e logica di predizione.</li>
-                        <li><code>intents.json</code>: file sorgente della conoscenza, contenente tag, pattern di domanda e risposte.</li>
-                        <li><code>index.html</code>: interfaccia web interattiva con logica di messaggistica asincrona (JavaScript).</li>
-                        <li><code>requirements.txt</code>: elenco delle dipendenze Python necessarie per l'esecuzione dell'ambiente.</li>
+                        <li><code>app.py</code>: entrypoint del server Flask, gestione del routing API
+                            <code>/chat</code> e logica di predizione.</li>
+                        <li><code>intents.json</code>: file sorgente della conoscenza, contenente tag, pattern di
+                            domanda e risposte.</li>
+                        <li><code>index.html</code>: interfaccia web interattiva con logica di messaggistica asincrona
+                            (JavaScript).</li>
+                        <li><code>requirements.txt</code>: elenco delle dipendenze Python necessarie per l'esecuzione
+                            dell'ambiente.</li>
                     </ul>
                 </div>
                 <p>
-                    Oltre al classificatore standard in <strong>Scikit-Learn</strong>, nei laboratori è stato sperimentato anche l'uso di <strong>Sentence-Transformers</strong> (modello <code>all-MiniLM-L6-v2</code>) per confrontare l'accuratezza semantica degli embedding densi con l'approccio vettoriale classico.
+                    Oltre al classificatore standard in <strong>Scikit-Learn</strong>, nei laboratori è stato
+                    sperimentato anche l'uso di <strong>Sentence-Transformers</strong> (modello
+                    <code>all-MiniLM-L6-v2</code>) per confrontare l'accuratezza semantica degli embedding densi con
+                    l'approccio vettoriale classico.
                 </p>
             </section>
 
@@ -113,12 +140,17 @@
             <section class="doc-section card-panel">
                 <h2>Il sistema degli intenti e il file intents.json</h2>
                 <p>
-                    GustAvo non adotta un approccio generativo libero (come i grandi modelli LLM), ma opera come un <strong>classificatore supervisionato basato su intenti</strong>. Questa scelta architetturale garantisce:
+                    GustAvo non adotta un approccio generativo libero (come i grandi modelli LLM), ma opera come un
+                    <strong>classificatore supervisionato basato su intenti</strong>. Questa scelta architetturale
+                    garantisce:
                 </p>
                 <ul style="margin-left: 20px; line-height: 1.8; color: var(--text-body); margin-bottom: 16px;">
-                    <li><strong>Risposte convalidate e certe:</strong> il bot attinge unicamente a risposte verificate dall'istituto, eliminando il rischio di allucinazioni o informazioni inventate.</li>
-                    <li><strong>Efficienza e sostenibilità:</strong> consumo ridotto di CPU e RAM, consentendo l'hosting autonomo sui server della scuola senza costi di computazione esterni.</li>
-                    <li><strong>Tutela dei dati:</strong> assenza di conservazione di cronologia, cookie di tracciamento o profilazione degli utenti.</li>
+                    <li><strong>Risposte convalidate e certe:</strong> il bot attinge unicamente a risposte verificate
+                        dall'istituto, eliminando il rischio di allucinazioni o informazioni inventate.</li>
+                    <li><strong>Efficienza e sostenibilità:</strong> consumo ridotto di CPU e RAM, consentendo l'hosting
+                        autonomo sui server della scuola senza costi di computazione esterni.</li>
+                    <li><strong>Tutela dei dati:</strong> assenza di conservazione di cronologia, cookie di tracciamento
+                        o profilazione degli utenti.</li>
                 </ul>
 
                 <p style="font-weight: 600; color: var(--text-heading); margin-bottom: 8px;">
@@ -137,13 +169,16 @@
   <span class="p">]</span>
 <span class="p">}</span></code></pre>
                 </div>
-                <p style="font-size: 0.92rem; color: var(--text-muted); line-height: 1.6; margin-top: 12px; margin-bottom: 6px;">
+                <p
+                    style="font-size: 0.92rem; color: var(--text-muted); line-height: 1.6; margin-top: 12px; margin-bottom: 6px;">
                     <strong>Spiegazione dei campi:</strong>
                 </p>
                 <ul style="margin-left: 20px; font-size: 0.92rem; color: var(--text-muted); line-height: 1.7;">
                     <li><code>tag</code>: categoria semantica della richiesta.</li>
-                    <li><code>patterns</code>: insieme di esempi e formulazioni alternative con cui la domanda può essere posta dall'utente.</li>
-                    <li><code>responses</code>: risposta o elenco di risposte certificate che il sistema restituisce quando il tag viene classificato.</li>
+                    <li><code>patterns</code>: insieme di esempi e formulazioni alternative con cui la domanda può
+                        essere posta dall'utente.</li>
+                    <li><code>responses</code>: risposta o elenco di risposte certificate che il sistema restituisce
+                        quando il tag viene classificato.</li>
                 </ul>
             </section>
 
@@ -151,45 +186,41 @@
             <section class="doc-section card-panel">
                 <h2>I tre modelli a confronto</h2>
                 <p>
-                    Durante le sessioni di laboratorio didattico sono state sviluppate e sperimentate tre soluzioni architetturali distinte:
+                    Durante le sessioni di laboratorio didattico sono state sviluppate e sperimentate tre soluzioni
+                    architetturali distinte:
                 </p>
 
                 <div class="solutions-grid">
                     <div class="solution-card">
                         <h3>1. TF-IDF + Similarità Coseno</h3>
                         <p>
-                            <strong>Architettura attiva (gustavo1):</strong> trasforma le frasi in vettori pesati con TF-IDF e calcola l'angolo di similarità rispetto ai pattern. È estremamente leggero su CPU/RAM e offre risposte istantanee su insiemi controllati di FAQ.
+                            <strong>Architettura attiva (gustavo1):</strong> trasforma le frasi in vettori pesati con
+                            TF-IDF e calcola l'angolo di similarità rispetto ai pattern. È estremamente leggero su
+                            CPU/RAM e offre risposte istantanee su insiemi controllati di FAQ.
                         </p>
                     </div>
 
                     <div class="solution-card">
                         <h3>2. TF-IDF + Rete Neurale (MLP)</h3>
                         <p>
-                            <strong>Soluzione supervisionata (gustavo2):</strong> rete neurale Multi-Layer Perceptron (strato nascosto a 10 neuroni con attivazione ReLU e Softmax). Offre maggiore stabilità con frasi rumorose o variazioni sintattiche.
+                            <strong>Soluzione supervisionata (gustavo2):</strong> rete neurale Multi-Layer Perceptron
+                            (strato nascosto a 10 neuroni con attivazione ReLU e Softmax). Offre maggiore stabilità con
+                            frasi rumorose o variazioni sintattiche.
                         </p>
                     </div>
 
                     <div class="solution-card">
                         <h3>3. Sentence Transformer (Embedding)</h3>
                         <p>
-                            <strong>Soluzione semantica (gustavo3):</strong> impiega il modello pre-addestrato <code>all-MiniLM-L6-v2</code> per generare vettori densi a 384 dimensioni. Coglie il significato intrinseco riconoscendo sinonimi e parafrasi complesse.
+                            <strong>Soluzione semantica (gustavo3):</strong> impiega il modello pre-addestrato
+                            <code>all-MiniLM-L6-v2</code> per generare vettori densi a 384 dimensioni. Coglie il
+                            significato intrinseco riconoscendo sinonimi e parafrasi complesse.
                         </p>
                     </div>
                 </div>
             </section>
 
-            <!-- 6. EVOLUZIONI FUTURE E SCALABILITÀ -->
-            <section class="doc-section card-panel">
-                <h2>Possibili evoluzioni future</h2>
-                <p>
-                    In base ai test e alla documentazione finale, le prospettive di potenziamento del sistema prevedono:
-                </p>
-                <ul style="margin-left: 20px; line-height: 1.8; color: var(--text-body);">
-                    <li><strong>Integrazione di FAISS (Facebook AI Similarity Search):</strong> ottimizzazione della ricerca vettoriale tramite indicizzazione avanzata, per mantenere tempi di risposta minimi al crescere del numero di pattern.</li>
-                    <li><strong>Memoria contestuale:</strong> gestione di dialoghi multi-turno per comprendere domande di follow-up (es. <em>"E quali sono gli orari?"</em> riferito al corso precedentemente citato).</li>
-                    <li><strong>Architettura RAG semi-strutturata:</strong> consultazione dinamica dei documenti ufficiali d'istituto (POF, regolamenti e circolari) per integrare la knowledge base in modo automatico e verificato.</li>
-                </ul>
-            </section>
+
 
         </div>
     </main>
@@ -198,10 +229,12 @@
     <footer class="footer">
         <div class="container footer-container">
             <div class="footer-logos">
-                <a href="https://www.itisavogadro.it" target="_blank" rel="noopener noreferrer" class="footer-logo-link" title="Istituto Tecnico Amedeo Avogadro — Torino">
+                <a href="https://www.itisavogadro.it" target="_blank" rel="noopener noreferrer" class="footer-logo-link"
+                    title="Istituto Tecnico Amedeo Avogadro — Torino">
                     <img src="assets/img/logo_avogadro.png" alt="Logo IIS Avogadro" class="footer-logo-avo">
                 </a>
-                <a href="https://avoprogetti.it" target="_blank" rel="noopener noreferrer" class="footer-logo-link" title="Piattaforma AvoProgetti">
+                <a href="https://avoprogetti.it" target="_blank" rel="noopener noreferrer" class="footer-logo-link"
+                    title="Piattaforma AvoProgetti">
                     <img src="assets/img/logo_avoprogetti.jpeg" alt="Logo AvoProgetti" class="footer-logo-avoprogetti">
                 </a>
                 <a href="index.html" class="footer-logo-link" title="GustAvo Chatbot">
@@ -216,7 +249,10 @@
                     </strong>
                 </p>
             </div>
+
+        </div>
     </footer>
 
 </body>
+
 </html>

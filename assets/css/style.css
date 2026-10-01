@@ -194,7 +194,7 @@ body>header {
     margin-left: 10px;
     margin-top: 3px;
     font-size: 0.62rem;
-    font-weight: 600;
+    font-weight: 600;   
     letter-spacing: 1px;
     line-height: 1;
     text-transform: uppercase;
@@ -1365,6 +1365,7 @@ body.chatbot-page>header {
     box-shadow: 0 14px 30px rgba(0, 40, 100, 0.14);
 }
 
+
 .gallery-card img {
     width: 100%;
     aspect-ratio: 4 / 3;
@@ -1470,7 +1471,7 @@ body.chatbot-page>header {
 }
 
 .footer-logo-link:hover {
-    transform: translateY(-2px);
+    transform: translateY(-2px);    
     opacity: 1;
 }
 
@@ -1487,6 +1488,7 @@ body.chatbot-page>header {
     object-fit: contain;
     border-radius: 6px;
     filter: drop-shadow(0 1px 3px rgba(0, 0, 0, 0.2));
+    
 }
 
 .footer-logo-gustavo {
