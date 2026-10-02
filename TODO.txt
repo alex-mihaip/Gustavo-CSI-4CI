@@ -26,4 +26,9 @@ Suddivedere la galleria in sezioni, con descrizione
 
 GustAvo -- il chatbot che ti orienta a scuola(stile piu piccolo)[COMPLETATO]
 
-    
+[12:53, 01/10/2026] cassara: rimuovee scroll con freccie della tastiera e drag con la manina su pc, sistemare il responsive delle immagini su full screen, div delle immagini tutti della stess agrandezza
+[12:56, 01/10/2026] cassara: agviufnee lo scroll delle immagini della home
+[12:57, 01/10/2026] cassara: aggiungere che quando si condivide il link c'è l'immagine del logo di gustavo
+[13:00, 01/10/2026] cassara: fare che da telefono quando si preme fuori dal menù ad hamburger si chiude
+fare che da telefono quando si preme fuori dal menù ad hamburger si chiude
+FEATURE TASTO DISABILI

@@ -13,8 +13,10 @@ $link_ext = '.html';
 <header>
     <nav class="navbar">
       <a href="index<?php echo $link_ext; ?>" class="logo-link">
-    <img src="assets/img/gustavo_icon.png" alt="Logo GustAvo" class="nav-logo-icon">
-    <span class="logo-testo">
+        <span class="nav-logo-box skeleton">
+            <img src="assets/img/gustavo_icon.png" alt="Logo GustAvo" class="nav-logo-icon">
+        </span>
+        <span class="logo-testo">
         <span class="logo-nome">GustAvo</span>
         <span class="logo-motto">Il chatbot che ti orienta a scuola</span>
     </span>

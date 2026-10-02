@@ -70,6 +70,76 @@ img {
 }
 
 /* --------------------------------------------------------------------------
+   Skeleton UI — Placeholder animato di caricamento immagini
+   -------------------------------------------------------------------------- */
+.skeleton {
+    position: relative;
+    overflow: hidden;
+}
+
+.skeleton:not(.loaded) {
+    background-color: #e2e8f0 !important;
+}
+
+.skeleton:not(.loaded)::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    transform: translateX(-100%);
+    background: linear-gradient(
+        90deg,
+        rgba(255, 255, 255, 0) 0%,
+        rgba(255, 255, 255, 0.65) 50%,
+        rgba(255, 255, 255, 0) 100%
+    );
+    animation: skeleton-shimmer 1.5s ease-in-out infinite;
+    z-index: 5;
+    pointer-events: none;
+}
+
+@keyframes skeleton-shimmer {
+    100% {
+        transform: translateX(100%);
+    }
+}
+
+.skeleton img {
+    transition: opacity 0.35s ease;
+}
+
+.skeleton:not(.loaded) img {
+    opacity: 0;
+}
+
+.skeleton.loaded img {
+    opacity: 1;
+}
+
+.nav-logo-box {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+.gallery-card.skeleton {
+    aspect-ratio: 4 / 3;
+}
+
+.hero-photo.skeleton {
+    aspect-ratio: 16 / 10;
+}
+
+.footer-logo-link.skeleton:not(.loaded) {
+    min-width: 32px;
+    min-height: 24px;
+    border-radius: var(--radius-sm);
+}
+
+/* --------------------------------------------------------------------------
    2. Variabili & Palette dell'Avogadro
    -------------------------------------------------------------------------- */
 :root {
